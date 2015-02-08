@@ -9,7 +9,7 @@
 #                                                                              #
 # LICENCE INFORMATION                                                          #
 #                                                                              #
-# This program is provides procedures to import remote modules.                #
+# This program provides procedures to import remote modules.                   #
 #                                                                              #
 # copyright (C) 2015 William Breaden Madden                                    #
 #                                                                              #
@@ -33,7 +33,7 @@
 """
 
 name    = "smuggle"
-version = "2015-02-04T1004Z"
+version = "2015-02-08T2038Z"
 
 import sys
 import urllib
