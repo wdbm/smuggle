@@ -33,14 +33,31 @@
 """
 
 name    = "smuggle"
-version = "2015-02-08T2038Z"
+version = "2015-03-04T1134Z"
 
 import sys
 import urllib
 import imp
 
-def smuggle(URL = None):
-    moduleString = urllib.urlopen(URL).read()
-    module = imp.new_module("module")
-    exec moduleString in module.__dict__
-    return(module)
+def smuggle(
+    moduleName = None,
+    URL        = None
+    ):
+    try:
+        module = __import__(moduleName)
+        return(module)
+    except:
+        try:
+            moduleString = urllib.urlopen(URL).read()
+            module = imp.new_module("module")
+            exec moduleString in module.__dict__
+            return(module)
+        except: 
+            raise(
+                Exception(
+                    "module {moduleName} inaccessible".format(
+                        moduleName = moduleName
+                    )
+                )
+            )
+            sys.exit()
