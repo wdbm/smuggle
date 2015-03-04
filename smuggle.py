@@ -33,7 +33,7 @@
 """
 
 name    = "smuggle"
-version = "2015-03-04T1134Z"
+version = "2015-03-04T1332Z"
 
 import sys
 import urllib
@@ -43,6 +43,8 @@ def smuggle(
     moduleName = None,
     URL        = None
     ):
+    if moduleName is None:
+        moduleName = URL
     try:
         module = __import__(moduleName)
         return(module)
@@ -55,7 +57,7 @@ def smuggle(
         except: 
             raise(
                 Exception(
-                    "module {moduleName} inaccessible".format(
+                    "module {moduleName} import error".format(
                         moduleName = moduleName
                     )
                 )

@@ -11,6 +11,10 @@ sysTest = smuggle.smuggle(
 #zappoTest = smuggle.smuggle(
 #    moduleName = "zappo"
 #)
+# raises exception:
+#gwappoTest = smuggle.smuggle(
+#    URL = "httpsno://cdn.rawgit.com/wdbm/no/master/no.py"
+#)
 
 def main():
     alpha = shijianTest.Clock(name = "alpha")
