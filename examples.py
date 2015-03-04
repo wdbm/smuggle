@@ -8,7 +8,7 @@ sysTest = smuggle.smuggle(
     moduleName = "sys"
 )
 # raises exception:
-#sysTest = smuggle.smuggle(
+#zappoTest = smuggle.smuggle(
 #    moduleName = "zappo"
 #)
 
