@@ -33,32 +33,32 @@
 """
 
 name    = "smuggle"
-version = "2015-03-04T1332Z"
+version = "2016-03-25T1614Z"
 
 import sys
 import urllib
 import imp
 
 def smuggle(
-    moduleName = None,
-    URL        = None
+    module_name = None,
+    URL         = None
     ):
-    if moduleName is None:
-        moduleName = URL
+    if module_name is None:
+        module_name = URL
     try:
-        module = __import__(moduleName)
+        module = __import__(module_name)
         return(module)
     except:
         try:
-            moduleString = urllib.urlopen(URL).read()
+            module_string = urllib.urlopen(URL).read()
             module = imp.new_module("module")
-            exec moduleString in module.__dict__
+            exec module_string in module.__dict__
             return(module)
         except: 
             raise(
                 Exception(
-                    "module {moduleName} import error".format(
-                        moduleName = moduleName
+                    "module {module_name} import error".format(
+                        module_name = module_name
                     )
                 )
             )

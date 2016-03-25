@@ -1,25 +1,25 @@
 #!/usr/bin/env python
 
 import smuggle
-shijianTest = smuggle.smuggle(
+shijian_test = smuggle.smuggle(
     URL = "https://cdn.rawgit.com/wdbm/shijian/master/shijian.py"
 )
-sysTest = smuggle.smuggle(
-    moduleName = "sys"
+sys_test = smuggle.smuggle(
+    module_name = "sys"
 )
 # raises exception:
-#zappoTest = smuggle.smuggle(
-#    moduleName = "zappo"
+#zappo_test = smuggle.smuggle(
+#    module_name = "zappo"
 #)
 # raises exception:
-#gwappoTest = smuggle.smuggle(
+#gwappo_test = smuggle.smuggle(
 #    URL = "httpsno://cdn.rawgit.com/wdbm/no/master/no.py"
 #)
 
 def main():
-    alpha = shijianTest.Clock(name = "alpha")
+    alpha = shijian_test.Clock(name = "alpha")
     alpha.printout()
-    sysTest.exit()
+    sys_test.exit()
 
 if __name__ == '__main__':
     main()
